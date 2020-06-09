@@ -25,6 +25,7 @@
 
 
 ## Game-logic
+
 - [ ] function to checkWin
 - [ ] function for time interval
 - [ ] function for resetting the game
@@ -50,3 +51,6 @@
 - [ ] having difficulty with aligning the eventlisteners and the ability to restart the game/refresh the boxes
 - [ ] unable to find licensing for pictures that I want to use? 
 
+## Citations 
+
+- [ ] wanted to use raindbow text, so I followed the code from this site https://w3bits.com/rainbow-text/
