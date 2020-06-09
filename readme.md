@@ -12,7 +12,7 @@
 - [ ] one player goes at a time
 - [ ] reset the scoreboard 
 
-! [ ] (/Users/michelaiacobucci/Pictures/Photos Library.photoslibrary/resources/derivatives/8/8EC397FF-48DF-4F61-9C67-08A0140CADE6_1_105_c.jpeg)
+! [ ] (8EC397FF-48DF-4F61-9C67-08A0140CADE6_1_105_c.jpeg)
 
 ## Stretch Goals 
 
