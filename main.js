@@ -22,6 +22,25 @@ let score2 = document.getElementById('score2')
 let reset = document.getElementById("button");
 let hardReset = document.getElementById('restart');
 
+let memesBox = ['https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg', 
+'https://i.kym-cdn.com/entries/icons/mobile/000/009/479/Ermahgerd.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/030/157/womanyellingcat.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/017/618/pepefroggie.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/007/831/10GUY.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/056/itsover1000.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/015/878/thatsnoneofmy.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/043/disaster-girl.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/881/chubbybubbles.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg', 
+'https://i.kym-cdn.com/entries/icons/mobile/000/009/479/Ermahgerd.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/030/157/womanyellingcat.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/017/618/pepefroggie.jpg',
+'https://i.kym-cdn.com/entries/icons/mobile/000/007/831/10GUY.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/056/itsover1000.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/015/878/thatsnoneofmy.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/043/disaster-girl.jpg',
+'https://i.kym-cdn.com/entries/icons/medium/000/000/881/chubbybubbles.jpg'];
+
 /*----Event Listener's/ DOM Manipulation-----*/
 
 reset.addEventListener("click", reset);
@@ -30,43 +49,41 @@ hardReset.addEventListener("click", hardReset);
 
 
 // Running through the grid without having to individually list them all 
-let memes = document.getElementsByClassName('.inner');
+let memes = document.getElementsByClassName('inner');
 console.log(memes);
 
 for (let i= 0; i < memes.length; i++) {
-    cells.addEventListener ('click', function(){
-        console.log(i)
-    })
+    memes[i].addEventListener ('click', flipCards)
 }
 
-// Setting the images into each Div 
-// document.getElementById('00').innerText = '<img width="100" height="100" src="https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg">';
-// document.getElementById('01').innerText =
-// document.getElementById('02').innerText =
-// document.getElementById('03').innerText =
-// document.getElementById('04').innerText =
-// document.getElementById('05').
-// document.getElementById('06').
-// document.getElementById('07').
-// document.getElementById('08').
-// document.getElementById('09').
-// document.getElementById('10').
-// document.getElementById('11').
-// document.getElementById('12').
-// document.getElementById('13').
-// document.getElementById('14').
-// document.getElementById('15').
 
+// function image () {
+//     let img = document.createElement("img");
+//     for (let i=0; i < memesBox.length; i++)
+//     img.src = 'https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg';
+//     img.id = "img1"
+//     // let a = document.getElementById("00");
+//     let allBoxes = document.getElementsByClassName("inner");
+//     let randomBox = allBoxes[Math.floor(Math.random() * 16)]
+//     randomBox.appendChild(img);
+//     // let allMemes = document.querySelector('.img').addEventListener('click', function() {
 
-function image () {
-    let img = document.createElement("img");
-    img.src = "https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg"
-    img.id = "img1"
-    let a = document.getElementById("00");
-    a.appendChild(img);
+//     // })
+// }
+// image();
+
+function flipCards(e) {
+    let img = document.createElement('img'); 
+    let randomLink = memesBox[Math.floor(Math.random() *16)]
+    img.src = randomLink;
+    e.target.appendChild(img);
 }
-image();
 
+
+
+
+
+// Function to change the images when the player selects one of the div's
 
 // Defining the players and their current move 
 let playerOne = {
@@ -107,9 +124,54 @@ function countdown() {
 
 // function to checkWin
 // function for time interval
+const STARTING_TIME = 0;
+let remainingTime = 700; 
+let gameOver = true;
+
+
+function updateClock() {
+    remainingTime++
+    timer.textContent = "00:00" + remainingTime;
+    if (remainingTime <= 700) {
+        endGame(false)
+    }
+}
+
+function endGame(win) {
+    clearInterval(countdown)
+    gameOver = true;
+    hardReset.disabled = false;
+    if (win) {
+        timer.classList.add("green");
+    } else { // add animation of losing emoji
+        body.classList.add("green");
+    }
+}
+
 // function for resetting the game
 // function for resetting the boxes after two are selected 
 // function to print score results
 // function to print winning player
 // function to recognize which player is playing 
 // function to reset the scoreboard so that the two players can start another round
+
+
+/*----Archives-----*/
+
+// Setting the images into each Div - need a function for this 
+// document.getElementById('00').innerText = '<img width="100" height="100" src="https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg">';
+// document.getElementById('01').innerText =
+// document.getElementById('02').innerText =
+// document.getElementById('03').innerText =
+// document.getElementById('04').innerText =
+// document.getElementById('05').
+// document.getElementById('06').
+// document.getElementById('07').
+// document.getElementById('08').
+// document.getElementById('09').
+// document.getElementById('10').
+// document.getElementById('11').
+// document.getElementById('12').
+// document.getElementById('13').
+// document.getElementById('14').
+// document.getElementById('15').

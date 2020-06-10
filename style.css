@@ -15,20 +15,24 @@
     vertical-align: top;
 }
 .one{
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .two {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .three {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
   .four {
-      display: inline-block;
-      position: relative;
+      display: flex;
+      flex-direction: row;
+    justify-content: space-around;
   }
 
   #movement {
@@ -39,20 +43,31 @@
   }
 
   #grid {
-      margin-left: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
       
   }
   aside {
       font-weight: lighter;
-      float: right;
+      /* float: right;
       padding: 50px;
       margin-top: -570px;
-      margin-right: 40px;
+      margin-right: 40px; */
       font-family: 'Architects Daughter', cursive;
+      display: inline;
   }
 
   #img1 {
-      height: 55px;
-      width: 55px;
+      height: 100%;
+      width: 100%;
       background: transparent;
+      position: relative;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: relative;
   }
