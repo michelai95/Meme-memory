@@ -9,18 +9,26 @@
     padding: 50px;
     height: 75px;
     width: 75px;
+    display: flex;
+    align-content: center;
+    position: relative;
+    vertical-align: top;
 }
 .one{
     display: inline-block;
+    position: relative;
   }
   .two {
     display: inline-block;
+    position: relative;
   }
   .three {
     display: inline-block;
+    position: relative;
   }
   .four {
       display: inline-block;
+      position: relative;
   }
 
   #movement {
@@ -32,6 +40,7 @@
 
   #grid {
       margin-left: 180px;
+      
   }
   aside {
       font-weight: lighter;
@@ -40,4 +49,10 @@
       margin-top: -570px;
       margin-right: 40px;
       font-family: 'Architects Daughter', cursive;
+  }
+
+  #img1 {
+      height: 55px;
+      width: 55px;
+      background: transparent;
   }

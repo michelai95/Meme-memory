@@ -26,7 +26,7 @@ let hardReset = document.getElementById('restart');
 
 reset.addEventListener("click", reset);
 hardReset.addEventListener("click", hardReset);
-grid.addEventListener("click", )
+
 
 
 // Running through the grid without having to individually list them all 
@@ -38,6 +38,35 @@ for (let i= 0; i < memes.length; i++) {
         console.log(i)
     })
 }
+
+// Setting the images into each Div 
+// document.getElementById('00').innerText = '<img width="100" height="100" src="https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg">';
+// document.getElementById('01').innerText =
+// document.getElementById('02').innerText =
+// document.getElementById('03').innerText =
+// document.getElementById('04').innerText =
+// document.getElementById('05').
+// document.getElementById('06').
+// document.getElementById('07').
+// document.getElementById('08').
+// document.getElementById('09').
+// document.getElementById('10').
+// document.getElementById('11').
+// document.getElementById('12').
+// document.getElementById('13').
+// document.getElementById('14').
+// document.getElementById('15').
+
+
+function image () {
+    let img = document.createElement("img");
+    img.src = "https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg"
+    img.id = "img1"
+    let a = document.getElementById("00");
+    a.appendChild(img);
+}
+image();
+
 
 // Defining the players and their current move 
 let playerOne = {
@@ -54,20 +83,33 @@ let playerTwo = {
 
 /*------Game Logic------*/
 
+// To allow player one to choose a card 
+
 // To display the cards and turn them over 
-var displayMeme = function() {
+let displayMeme = function() {
     this.classList.toggle("open")
     this.classList.toggle("show")
     this.classList.toggle("disabled")
+    grid.addEventListener("click", displayMeme);
 }
 
+// To allow player two to choose a card 
 
 // The timer 
-var second = 0, minute = 0;
-var timer = document.querySelector("#time");
-var interval; 
+let second = 0, minute = 0;
+let timer = document.querySelector("#time");
+let interval; 
 function countdown() {
     interval = setInterval(function() {
         timer.textContent = minute+"minutes "+second+"seconds ";
     })
 }
+
+// function to checkWin
+// function for time interval
+// function for resetting the game
+// function for resetting the boxes after two are selected 
+// function to print score results
+// function to print winning player
+// function to recognize which player is playing 
+// function to reset the scoreboard so that the two players can start another round
