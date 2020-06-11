@@ -53,37 +53,37 @@ let memes = document.getElementsByClassName('inner');
 console.log(memes);
 
 for (let i= 0; i < memes.length; i++) {
-    memes[i].addEventListener ('click', flipCards)
+    // Function to change the images when the player selects one of the div's
+    // To display the cards and turn them over 
+    let displayMeme = function() {
+        this.classList.toggle("front")
+        this.classList.toggle("back")
+        this.classList.toggle("disabled")
+    }
+    memes[i].addEventListener ('click', displayMeme)
 }
 
+const cards = document.querySelectorAll('.inner');
+function flipMeme() {
+    this.classList.toggle('flip');
+}
 
-// function image () {
-//     let img = document.createElement("img");
-//     for (let i=0; i < memesBox.length; i++)
-//     img.src = 'https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg';
-//     img.id = "img1"
-//     // let a = document.getElementById("00");
-//     let allBoxes = document.getElementsByClassName("inner");
-//     let randomBox = allBoxes[Math.floor(Math.random() * 16)]
-//     randomBox.appendChild(img);
-//     // let allMemes = document.querySelector('.img').addEventListener('click', function() {
+cards.forEach(memes =>
+    card.addEventListener('click', displayMeme));
 
-//     // })
+
+/*------Game Logic------*/
+
+// Starting game function
+
+// function startGame() {
+//     let shuffleMemes = shuffle(memesBox);
+//     for (i=0; i < shuffleMemes.length; i++);
+//     cardElements[i].appendChild(shuffleMemes[i])
 // }
-// image();
 
-function flipCards(e) {
-    let img = document.createElement('img'); 
-    let randomLink = memesBox[Math.floor(Math.random() *16)]
-    img.src = randomLink;
-    e.target.appendChild(img);
-}
-
-
-
-
-
-// Function to change the images when the player selects one of the div's
+// Starts the game once the window is opened
+window.onload = startGame();
 
 // Defining the players and their current move 
 let playerOne = {
@@ -98,17 +98,7 @@ let playerTwo = {
     allChoices: []
 }; 
 
-/*------Game Logic------*/
-
 // To allow player one to choose a card 
-
-// To display the cards and turn them over 
-let displayMeme = function() {
-    this.classList.toggle("open")
-    this.classList.toggle("show")
-    this.classList.toggle("disabled")
-    grid.addEventListener("click", displayMeme);
-}
 
 // To allow player two to choose a card 
 
@@ -123,6 +113,10 @@ function countdown() {
 }
 
 // function to checkWin
+
+
+
+
 // function for time interval
 const STARTING_TIME = 0;
 let remainingTime = 700; 
@@ -175,3 +169,29 @@ function endGame(win) {
 // document.getElementById('13').
 // document.getElementById('14').
 // document.getElementById('15').
+
+// function image () {
+//     let img = document.createElement("img");
+//     for (let i=0; i < memesBox.length; i++)
+//     img.src = 'https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg';
+//     img.id = "img1"
+//     // let a = document.getElementById("00");
+//     let allBoxes = document.getElementsByClassName("inner");
+//     let randomBox = allBoxes[Math.floor(Math.random() * 16)]
+//     randomBox.appendChild(img);
+//     // let allMemes = document.querySelector('.img').addEventListener('click', function() {
+
+//     // })
+// }
+// image();
+
+// // Function to change the images when the player selects one of the div's
+// This is placing the meme memory cards into the div with the current image! - learned with Yash the bomb.com
+// function flipCards(e) {
+//     let img = document.createElement('img'); 
+//     let randomLink = memesBox[Math.floor(Math.random() *16)]
+//     img.src = randomLink;
+//     e.target.src = randomLink;
+//     console.log("You clicked " + e.target.id);
+//     // is adding an image to the side of the original - I want them to flip 
+// }
