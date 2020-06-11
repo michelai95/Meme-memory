@@ -41,6 +41,16 @@ let memesBox = ['https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFac
 'https://i.kym-cdn.com/entries/icons/medium/000/000/043/disaster-girl.jpg',
 'https://i.kym-cdn.com/entries/icons/medium/000/000/881/chubbybubbles.jpg'];
 
+let winning = [['00', '01'],
+['03', '04'],
+['05','06'],
+['07','08'],
+['09','10'],
+['10','11'],
+['12','13'],
+['14','15']
+];
+
 /*----Event Listener's/ DOM Manipulation-----*/
 
 reset.addEventListener("click", reset);
@@ -52,24 +62,46 @@ hardReset.addEventListener("click", hardReset);
 let memes = document.getElementsByClassName('inner');
 console.log(memes);
 
-for (let i= 0; i < memes.length; i++) {
-    // Function to change the images when the player selects one of the div's
-    // To display the cards and turn them over 
-    let displayMeme = function() {
-        this.classList.toggle("front")
-        this.classList.toggle("back")
-        this.classList.toggle("disabled")
-    }
-    memes[i].addEventListener ('click', displayMeme)
+ // Function to change the images when the player selects one of the div's
+function selectCard(e) {
+    console.log(e)
 }
+for (let i= 0; i < memes.length; i++) {
+    memes[i].addEventListener ('click', selectCard) 
+  }
+
+// function boxClick(e) {
+//     console.log("You chose " + e.target.id);
+//     let box = e.target.id;
+//     let combo = true;
+//     play(box);
+//     for (let i = 0; i < winningCombo.length; i++) {
+//         if (turn == 8) {
+//             combo = false;
+//         }
+//     }
+// }
+
+function play(e) {
+    let select = document.getElementsByClassName('inner');
+    if (select.style.display === "flex") {
+        select.style.display = 'block';
+    } else {
+        select.style.display = 'none';
+    }
+}
+
+
 
 const cards = document.querySelectorAll('.inner');
 function flipMeme() {
     this.classList.toggle('flip');
 }
 
-cards.forEach(memes =>
-    card.addEventListener('click', displayMeme));
+// cards.forEach(memes =>
+//     card.addEventListener('click', function() {
+//         console.log("")
+//     }));
 
 
 /*------Game Logic------*/
@@ -83,7 +115,7 @@ cards.forEach(memes =>
 // }
 
 // Starts the game once the window is opened
-window.onload = startGame();
+// window.onload = startGame();
 
 // Defining the players and their current move 
 let playerOne = {
@@ -195,3 +227,8 @@ function endGame(win) {
 //     console.log("You clicked " + e.target.id);
 //     // is adding an image to the side of the original - I want them to flip 
 // }
+
+//   let displayMeme = function() {
+//     this.classList.toggle("front")
+//     this.classList.toggle("back")
+//     this.classList.toggle("disabled")

@@ -4,7 +4,7 @@
 
 - [ ] the ability to select two boxes in one time frame 
 - [ ] the boxes should reset after two are selected 
-- [ ] using a grid/canvas 
+- [X] using a grid/canvas 
 - [ ] players score should update as they select "correct" boxes
 - [ ] ability to track and render "correct" selections/boxes
 - [ ] have two players

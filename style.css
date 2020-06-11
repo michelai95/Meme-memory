@@ -71,6 +71,10 @@
     background: transparent;
     display: flex;
   }
+
+  .back {
+    display: none;
+  }
 /* 
   #img1 {
       height: 100%;
