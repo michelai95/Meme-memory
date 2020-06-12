@@ -50,30 +50,9 @@ for (let i= 0; i < memes.length; i++) {
     memes[i].addEventListener('click', flip);
 }
 
-// function boxClick(e) {
-//     console.log("You chose " + e.target.id);
-//     let box = e.target.id;
-//     let combo = true;
-//     play(box);
-//     for (let i = 0; i < winningCombo.length; i++) {
-//         if (turn == 8) {
-//             combo = false;
-//         }
-//     }
-// }
-
-// // Meant to change the display when selected
-// function play(selectCard) {
-//     let select = document.getElementsByClassName('inner');
-//     if (select.style.display === "flex") {
-//         select.style.display = 'block';
-//     } else {
-//         select.style.display = 'none';
-//     }
-// }
-
 // worked with Yash to get my matching condition to work properly - I was selecting the wrong object from my HTML 
-
+// function for resetting the boxes after two are selected 
+// checkwin function 
 var clicks = 0;
 
 function flip(e){
@@ -118,16 +97,6 @@ function flip(e){
 
 
 
-// const cards = document.querySelectorAll('.inner');
-// function flipMeme() {
-//     this.classList.toggle('flip');
-// }
-
-// cards.forEach(memes =>
-//     card.addEventListener('click', function() {
-//         console.log("")
-//     }));
-
 
 /*------Game Logic------*/
 
@@ -163,44 +132,25 @@ let playerTwo = {
 let second = 0, minute = 0;
 let timer = document.querySelector("#time");
 let interval; 
+const STARTING_TIME = 0;
+let remainingTime = 8000;
+let gameOver = true;
+
 function countdown() {
     interval = setInterval(function() {
         timer.textContent = minute+"minutes "+second+"seconds ";
     })
 }
 
-// function to checkWin
- 
-
-    function printScore(winner) {
-        if (winner === "Player One") {
-            // can use any form of math for point scale
-            playerOne.points = playerOne.points+1;
-            playerOneScore.innerText = playerOne.points;
-        }
-        if (winner === "Player Two") {
-            playerTwo.points = playerTwo.points+1;
-            playerTwoScore.innerText = playerTwo.points; 
-        }
-    }
-
-    printScore();
-
-
-
-// function for time interval
-const STARTING_TIME = 0;
-let remainingTime = 700; 
-let gameOver = true;
-
-
 function updateClock() {
     remainingTime++
     timer.textContent = "00:00" + remainingTime;
-    if (remainingTime <= 700) {
+    if (remainingTime <= 0) {
         endGame(false)
     }
 }
+
+updateClock(countdown);
 
 function endGame(win) {
     clearInterval(countdown)
@@ -214,7 +164,6 @@ function endGame(win) {
 }
 
 // function for resetting the game
-// function for resetting the boxes after two are selected 
 // function to print score results
 // function to print winning player
 // function to recognize which player is playing 
@@ -271,3 +220,47 @@ function endGame(win) {
 //     this.classList.toggle("front")
 //     this.classList.toggle("back")
 //     this.classList.toggle("disabled")
+
+// function printScore(flip) {
+//     if (winner === "Player One") {
+//         // can use any form of math for point scale
+//         playerOne.points = playerOne.points+1;
+//         playerOneScore.innerText = playerOne.points;
+//     }
+//     if (winner === "Player Two") {
+//         playerTwo.points = playerTwo.points+1;
+//         playerTwoScore.innerText = playerTwo.points; 
+//     }
+// }
+
+// const cards = document.querySelectorAll('.inner');
+// function flipMeme() {
+//     this.classList.toggle('flip');
+// }
+
+// cards.forEach(memes =>
+//     card.addEventListener('click', function() {
+//         console.log("")
+//     }));
+
+// function boxClick(e) {
+//     console.log("You chose " + e.target.id);
+//     let box = e.target.id;
+//     let combo = true;
+//     play(box);
+//     for (let i = 0; i < winningCombo.length; i++) {
+//         if (turn == 8) {
+//             combo = false;
+//         }
+//     }
+// }
+
+// // Meant to change the display when selected
+// function play(selectCard) {
+//     let select = document.getElementsByClassName('inner');
+//     if (select.style.display === "flex") {
+//         select.style.display = 'block';
+//     } else {
+//         select.style.display = 'none';
+//     }
+// }

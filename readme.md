@@ -17,7 +17,7 @@
 ## Stretch Goals 
 
 - [ ] having the boxes randomize each new turn 
-- [ ] using images for each square 
+- [X] using images for each square 
 - [ ] using some of the newer frameworks/technology that we learned in the last week
 - [ ] keep track of players "personal best" time/score 
 - [ ] add animations for each player 
@@ -26,10 +26,10 @@
 
 ## Game-logic
 
-- [ ] function to checkWin
+- [X] function to checkWin
 - [ ] function for time interval
 - [ ] function for resetting the game
-- [ ] function for resetting the boxes after two are selected 
+- [X] function for resetting the boxes after two are selected 
 - [ ] function to print score results
 - [ ] function to print winning player
 - [ ] function to recognize which player is playing 
@@ -37,8 +37,8 @@
 
 ## Technology
 
-- [ ] html
-- [ ] CSS
+- [X] html
+- [X] CSS
 - [ ] bootstrap?
 - [ ] jQuery
 - [ ] canvas to hold the game 
@@ -53,4 +53,4 @@
 
 ## Citations 
 
-- [ ] wanted to use raindbow text, so I followed the code from this site https://w3bits.com/rainbow-text/
+- [ ] wanted to use rainbow text, so I followed the code from this site https://w3bits.com/rainbow-text/

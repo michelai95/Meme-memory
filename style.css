@@ -18,6 +18,12 @@
   transition: transform .2s;
 } */
 
+.score span {
+  display: inline;
+  font-family: 'Architects Daughter', cursive; 
+  margin-left: 200px;
+}
+
   #movement {
       font-size: 15px;
       font-weight: lighter;
@@ -33,15 +39,15 @@
     width: 100%;
     height: auto;
   }
-  aside {
+  /* aside {
       font-weight: lighter;
       float: right;
       /* padding: 50px;
       margin-top: -570px;
       margin-right: 40px; */
-      font-family: 'Architects Daughter', cursive;
+      /* font-family: 'Architects Daughter', cursive;
       display: center;
-  }
+  } */
 
   .front, .back {
     /* width:100%;
