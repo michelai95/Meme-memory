@@ -72,6 +72,10 @@ for (let i= 0; i < memes.length; i++) {
 //     }
 // }
 
+// worked with Yash to get my matching condition to work properly - I was selecting the wrong object from my HTML 
+
+var clicks = 0;
+
 function flip(e){
     console.log(e);
 
@@ -81,33 +85,37 @@ function flip(e){
 
     console.log(memesBox);
     
-    var clicks = memesBox.length;
+    // var clicks = memesBox.length;
+    clicks++;
     if(clicks == 2){
-        if(memesBox[0].type === memesBox[1].type){
+        let clickedCards = document.getElementsByClassName('active');  
+        if(memesBox[0].children[1].src === memesBox[1].children[1].src){
            console.log("match");
 
-           let clickedCards = document.getElementsByClassName('active');        
+                 
             for (let i= 0; i < clickedCards.length; i++) {
-                clickedCards[i].classList.add('matched');
-                clickedCards[i].classList.remove('active');
+                memesBox[0].classList.add('matched');
+                memesBox[1].classList.add('matched');
+                memesBox[0].classList.remove('active');
+                memesBox[1].classList.remove('active');
             }
 
            memesBox = [];
+           clicks = 0; 
         } else {
             console.log("oops");
 
-            var clickedCards = document.getElementsByClassName('active');
-            clickedCards.classList.remove('active');
+            // var clickedCards = document.getElementsByClassName('active');
+            memesBox[0].classList.remove('active');
+            memesBox[1].classList.remove('active');
  
             memesBox = [];
+            clicks = 0; 
         }
     }
 };
 
 
-function test(){
-    alert('this is a test');
-}
 
 
 // const cards = document.querySelectorAll('.inner');

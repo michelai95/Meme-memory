@@ -3,10 +3,10 @@
 ## MVP 
 
 - [x] the ability to select two boxes in one time frame 
-- [/] the boxes should reset after two are selected 
+- [X] the boxes should reset after two are selected 
 - [X] using a grid/canvas 
 - [ ] players score should update as they select "correct" boxes
-- [ ] ability to track and render "correct" selections/boxes
+- [X] ability to track and render "correct" selections/boxes
 - [x] have two players
 - [ ] have a timer that will countdown from x amount of minutes to add pressure for the player
 - [x] one player goes at a time
