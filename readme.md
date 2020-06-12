@@ -8,7 +8,7 @@
 - [ ] players score should update as they select "correct" boxes
 - [X] ability to track and render "correct" selections/boxes
 - [x] have two players
-- [ ] have a timer that will countdown from x amount of minutes to add pressure for the player
+- [X] have a timer that will countdown from x amount of minutes to add pressure for the player
 - [x] one player goes at a time
 - [ ] reset the scoreboard 
 
@@ -54,3 +54,9 @@
 ## Citations 
 
 - [ ] wanted to use rainbow text, so I followed the code from this site https://w3bits.com/rainbow-text/
+- [ ] Timer citation https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript/41633001#:~:text=The%20time%20origin%20is%20a,of%20the%20current%20document's%20lifetime.&text=var%20seconds%20%3D%200%3B%20setInterval(,a%20variable%20counting%20seconds%20elapsed.
+
+- [ ] logic research https://marina-ferreira.github.io/tutorials/js/memory-game/
+- [ ] research https://medium.com/@adamichelllle/building-a-memory-matching-game-in-javascript-48e792c7b563
+- [ ] research https://github.com/sandraisrael/Memory-Game-fend/blob/master/js/app.js
+- [ ] https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript/41633001#:~:text=The%20time%20origin%20is%20a,of%20the%20current%20document's%20lifetime.&text=var%20seconds%20%3D%200%3B%20setInterval(,a%20variable%20counting%20seconds%20elapsed.

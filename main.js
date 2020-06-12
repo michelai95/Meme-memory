@@ -24,21 +24,10 @@ let hardReset = document.getElementById('restart');
 
 let memesBox = [];
 
-let winning = [['00', '01'],
-['03', '04'],
-['05','06'],
-['07','08'],
-['09','10'],
-['10','11'],
-['12','13'],
-['14','15']
-];
-
 /*----Event Listener's/ DOM Manipulation-----*/
 
 reset.addEventListener("click", reset);
 hardReset.addEventListener("click", hardReset);
-
 
 
 // Running through the grid without having to individually list them all 
@@ -46,7 +35,7 @@ let memes = document.getElementsByClassName('inner');
 // console.log(memes);
 
 
-for (let i= 0; i < memes.length; i++) {
+for (let i = 0; i < memes.length; i++) {
     memes[i].addEventListener('click', flip);
 }
 
@@ -55,7 +44,7 @@ for (let i= 0; i < memes.length; i++) {
 // checkwin function 
 var clicks = 0;
 
-function flip(e){
+function flip(e) {
     console.log(e);
 
     this.classList.add('active');
@@ -63,40 +52,36 @@ function flip(e){
     memesBox.push(this);
 
     console.log(memesBox);
-    
+
     // var clicks = memesBox.length;
     clicks++;
-    if(clicks == 2){
-        let clickedCards = document.getElementsByClassName('active');  
-        if(memesBox[0].children[1].src === memesBox[1].children[1].src){
-           console.log("match");
+    if (clicks == 2) {
+        let clickedCards = document.getElementsByClassName('active');
+        if (memesBox[0].children[1].src === memesBox[1].children[1].src) {
+            console.log("match");
 
-                 
-            for (let i= 0; i < clickedCards.length; i++) {
+
+            for (let i = 0; i < clickedCards.length; i++) {
                 memesBox[0].classList.add('matched');
                 memesBox[1].classList.add('matched');
                 memesBox[0].classList.remove('active');
                 memesBox[1].classList.remove('active');
             }
 
-           memesBox = [];
-           clicks = 0; 
+            memesBox = [];
+            clicks = 0;
         } else {
             console.log("oops");
 
             // var clickedCards = document.getElementsByClassName('active');
             memesBox[0].classList.remove('active');
             memesBox[1].classList.remove('active');
- 
+
             memesBox = [];
-            clicks = 0; 
+            clicks = 0;
         }
     }
 };
-
-
-
-
 
 /*------Game Logic------*/
 
@@ -122,46 +107,31 @@ let playerTwo = {
     points: 0,
     currentChoice: null,
     allChoices: []
-}; 
+};
 
 // To allow player one to choose a card 
 
 // To allow player two to choose a card 
 
 // The timer 
-let second = 0, minute = 0;
+let seconds = 0;
 let timer = document.querySelector("#time");
-let interval; 
+let interval = setInterval(countdown, 1000)
+
 const STARTING_TIME = 0;
-let remainingTime = 8000;
 let gameOver = true;
 
 function countdown() {
-    interval = setInterval(function() {
-        timer.textContent = minute+"minutes "+second+"seconds ";
-    })
+    seconds++;
+    // we want to round to nearest whole minute
+    let minute = Math.floor(seconds/60) 
+    let remainingSeconds = seconds - minute*60
+    // can also use % for the equation 
+    timer.textContent = minute + "minutes " + remainingSeconds + "seconds ";
+    // seconds++, 1000;
 }
 
-function updateClock() {
-    remainingTime++
-    timer.textContent = "00:00" + remainingTime;
-    if (remainingTime <= 0) {
-        endGame(false)
-    }
-}
-
-updateClock(countdown);
-
-function endGame(win) {
-    clearInterval(countdown)
-    gameOver = true;
-    hardReset.disabled = false;
-    if (win) {
-        timer.classList.add("green");
-    } else { // add animation of losing emoji
-        body.classList.add("green");
-    }
-}
+timer.textContent = countdown();
 
 // function for resetting the game
 // function to print score results
@@ -264,3 +234,12 @@ function endGame(win) {
 //         select.style.display = 'none';
 //     }
 // }
+// let winning = [['00', '01'],
+// ['03', '04'],
+// ['05','06'],
+// ['07','08'],
+// ['09','10'],
+// ['10','11'],
+// ['12','13'],
+// ['14','15']
+// ];
