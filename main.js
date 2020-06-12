@@ -22,24 +22,7 @@ let score2 = document.getElementById('score2')
 let reset = document.getElementById("button");
 let hardReset = document.getElementById('restart');
 
-let memesBox = ['https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg', 
-'https://i.kym-cdn.com/entries/icons/mobile/000/009/479/Ermahgerd.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/030/157/womanyellingcat.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/017/618/pepefroggie.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/007/831/10GUY.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/056/itsover1000.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/015/878/thatsnoneofmy.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/043/disaster-girl.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/881/chubbybubbles.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg', 
-'https://i.kym-cdn.com/entries/icons/mobile/000/009/479/Ermahgerd.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/030/157/womanyellingcat.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/017/618/pepefroggie.jpg',
-'https://i.kym-cdn.com/entries/icons/mobile/000/007/831/10GUY.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/056/itsover1000.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/015/878/thatsnoneofmy.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/043/disaster-girl.jpg',
-'https://i.kym-cdn.com/entries/icons/medium/000/000/881/chubbybubbles.jpg'];
+let memesBox = [];
 
 let winning = [['00', '01'],
 ['03', '04'],
@@ -60,15 +43,12 @@ hardReset.addEventListener("click", hardReset);
 
 // Running through the grid without having to individually list them all 
 let memes = document.getElementsByClassName('inner');
-console.log(memes);
+// console.log(memes);
 
- // Function to change the images when the player selects one of the div's
-function selectCard(e) {
-    console.log(e)
-}
+
 for (let i= 0; i < memes.length; i++) {
-    memes[i].addEventListener ('click', selectCard) 
-  }
+    memes[i].addEventListener('click', flip);
+}
 
 // function boxClick(e) {
 //     console.log("You chose " + e.target.id);
@@ -82,21 +62,58 @@ for (let i= 0; i < memes.length; i++) {
 //     }
 // }
 
-function play(e) {
-    let select = document.getElementsByClassName('inner');
-    if (select.style.display === "flex") {
-        select.style.display = 'block';
-    } else {
-        select.style.display = 'none';
+// // Meant to change the display when selected
+// function play(selectCard) {
+//     let select = document.getElementsByClassName('inner');
+//     if (select.style.display === "flex") {
+//         select.style.display = 'block';
+//     } else {
+//         select.style.display = 'none';
+//     }
+// }
+
+function flip(e){
+    console.log(e);
+
+    this.classList.add('active');
+
+    memesBox.push(this);
+
+    console.log(memesBox);
+    
+    var clicks = memesBox.length;
+    if(clicks == 2){
+        if(memesBox[0].type === memesBox[1].type){
+           console.log("match");
+
+           let clickedCards = document.getElementsByClassName('active');        
+            for (let i= 0; i < clickedCards.length; i++) {
+                clickedCards[i].classList.add('matched');
+                clickedCards[i].classList.remove('active');
+            }
+
+           memesBox = [];
+        } else {
+            console.log("oops");
+
+            var clickedCards = document.getElementsByClassName('active');
+            clickedCards.classList.remove('active');
+ 
+            memesBox = [];
+        }
     }
+};
+
+
+function test(){
+    alert('this is a test');
 }
 
 
-
-const cards = document.querySelectorAll('.inner');
-function flipMeme() {
-    this.classList.toggle('flip');
-}
+// const cards = document.querySelectorAll('.inner');
+// function flipMeme() {
+//     this.classList.toggle('flip');
+// }
 
 // cards.forEach(memes =>
 //     card.addEventListener('click', function() {
@@ -145,7 +162,21 @@ function countdown() {
 }
 
 // function to checkWin
+ 
 
+    function printScore(winner) {
+        if (winner === "Player One") {
+            // can use any form of math for point scale
+            playerOne.points = playerOne.points+1;
+            playerOneScore.innerText = playerOne.points;
+        }
+        if (winner === "Player Two") {
+            playerTwo.points = playerTwo.points+1;
+            playerTwoScore.innerText = playerTwo.points; 
+        }
+    }
+
+    printScore();
 
 
 

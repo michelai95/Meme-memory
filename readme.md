@@ -2,14 +2,14 @@
 
 ## MVP 
 
-- [ ] the ability to select two boxes in one time frame 
-- [ ] the boxes should reset after two are selected 
+- [x] the ability to select two boxes in one time frame 
+- [/] the boxes should reset after two are selected 
 - [X] using a grid/canvas 
 - [ ] players score should update as they select "correct" boxes
 - [ ] ability to track and render "correct" selections/boxes
-- [ ] have two players
+- [x] have two players
 - [ ] have a timer that will countdown from x amount of minutes to add pressure for the player
-- [ ] one player goes at a time
+- [x] one player goes at a time
 - [ ] reset the scoreboard 
 
 ![](8EC397FF-48DF-4F61-9C67-08A0140CADE6_1_105_c.jpeg)
