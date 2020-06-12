@@ -21,7 +21,7 @@ let score1 = document.getElementById("score1");
 let score2 = document.getElementById('score2')
 let reset = document.getElementById("button");
 let hardReset = document.getElementById('restart');
-
+let points = document.getElementsByClassName('points');
 let memesBox = [];
 
 /*----Event Listener's/ DOM Manipulation-----*/
@@ -59,6 +59,7 @@ function flip(e) {
         let clickedCards = document.getElementsByClassName('active');
         if (memesBox[0].children[1].src === memesBox[1].children[1].src) {
             console.log("match");
+            score1.textContent = "Matches: " + turn++;
 
 
             for (let i = 0; i < clickedCards.length; i++) {
@@ -66,16 +67,19 @@ function flip(e) {
                 memesBox[1].classList.add('matched');
                 memesBox[0].classList.remove('active');
                 memesBox[1].classList.remove('active');
+                // score1.textContent = clicks++;
             }
 
             memesBox = [];
             clicks = 0;
         } else {
             console.log("oops");
+            score2.textContent = "Mismatches: " + turn++;
 
             // var clickedCards = document.getElementsByClassName('active');
             memesBox[0].classList.remove('active');
             memesBox[1].classList.remove('active');
+            // score2.textContent =  clicks++;
 
             memesBox = [];
             clicks = 0;
@@ -92,6 +96,7 @@ function flip(e) {
 //     for (i=0; i < shuffleMemes.length; i++);
 //     cardElements[i].appendChild(shuffleMemes[i])
 // }
+// endGame function 
 
 // Starts the game once the window is opened
 // window.onload = startGame();
@@ -110,6 +115,7 @@ let playerTwo = {
 };
 
 // To allow player one to choose a card 
+
 
 // To allow player two to choose a card 
 
@@ -131,13 +137,43 @@ function countdown() {
     // seconds++, 1000;
 }
 
-timer.textContent = countdown();
+function playerChoice() {
+    turn++;
+    points.textContent = turn;
+    if(turn == 1) {
+        second = 0;
+        minute = 0;
+        countdown();
+    }
+    if (turn > 8 && turn < 16) {
+        for(i=0; i < 3; i++) {
+            if(i>1) {
+                points.textContent = "Player One's Score " + playerChoice;
+            }
+        }
+    }
+    else if (turn > 17)
+    for(i=0; i < 3; i++) {
+            if(i>1) {
+                points.textContent = "Player One's Score " + playerChoice;
+            }
+    }
+
+}
+playerChoice();
+
+
 
 // function for resetting the game
 // function to print score results
 // function to print winning player
 // function to recognize which player is playing 
 // function to reset the scoreboard so that the two players can start another round
+
+
+
+
+
 
 
 /*----Archives-----*/
@@ -243,3 +279,4 @@ timer.textContent = countdown();
 // ['12','13'],
 // ['14','15']
 // ];
+// timer.textContent = countdown();
