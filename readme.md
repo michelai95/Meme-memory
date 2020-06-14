@@ -11,6 +11,7 @@
 - [X] have a timer that will countdown from x amount of minutes to add pressure for the player
 - [x] one player goes at a time
 - [ ] reset the scoreboard 
+- [ ] add animations for each player 
 
 ![](8EC397FF-48DF-4F61-9C67-08A0140CADE6_1_105_c.jpeg)
 
@@ -20,7 +21,6 @@
 - [X] using images for each square 
 - [ ] using some of the newer frameworks/technology that we learned in the last week
 - [ ] keep track of players "personal best" time/score 
-- [ ] add animations for each player 
 - [ ] have the animations respond during gameplay 
 
 

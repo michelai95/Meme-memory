@@ -75,6 +75,7 @@ function flip(e) {
         } else {
             console.log("oops");
             score2.textContent = "Mismatches: " + turn++;
+            // need to find a way to increment by 1 vs 2 ^^
 
             // var clickedCards = document.getElementsByClassName('active');
             memesBox[0].classList.remove('active');
@@ -137,46 +138,60 @@ function countdown() {
     // seconds++, 1000;
 }
 
-function playerChoice() {
-    turn++;
-    points.textContent = turn;
-    if(turn == 1) {
-        second = 0;
-        minute = 0;
-        countdown();
-    }
-    if (turn > 8 && turn < 16) {
-        for(i=0; i < 3; i++) {
-            if(i>1) {
-                points.textContent = "Player One's Score " + playerChoice;
-            }
-        }
-    }
-    else if (turn > 17)
-    for(i=0; i < 3; i++) {
-            if(i>1) {
-                points.textContent = "Player One's Score " + playerChoice;
-            }
-    }
+// Stretch goals
 
-}
-playerChoice();
+// Players choices
+
+// function playerChoice() {
+//     turn++;
+//     points.textContent = turn;
+//     if(turn == 1) {
+//         second = 0;
+//         minute = 0;
+//         countdown();
+//     }
+//     if (turn > 8 && turn < 16) {
+//         for(i=0; i < 3; i++) {
+//             if(i>1) {
+//                 points.textContent = "Player One's Score " + playerChoice;
+//             }
+//         }
+//     }
+//     else if (turn > 17)
+//     for(i=0; i < 3; i++) {
+//             if(i>1) {
+//                 points.textContent = "Player One's Score " + playerChoice;
+//             }
+//     }
+
+// }
+// playerChoice();
 
 
 
 // function for resetting the game
+
+
 // function to print score results
 // function to print winning player
 // function to recognize which player is playing 
 // function to reset the scoreboard so that the two players can start another round
 
 
+// function for shuffling cards 
+// function shuffleCards() {
+//   var cards = $board.children();
+//   while (cards.length) {
+//     $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
+//   }
+// }
 
 
 
 
 
-/*----Archives-----*/
+
+/*-----------Archives------------*/
 
 // Setting the images into each Div - need a function for this 
 // document.getElementById('00').innerText = '<img width="100" height="100" src="https://i.kym-cdn.com/entries/icons/mobile/000/000/091/TrollFace.jpg">';

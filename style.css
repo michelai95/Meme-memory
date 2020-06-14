@@ -18,10 +18,14 @@
   transition: transform .2s;
 } */
 
+.cards {
+  margin-left: 150px;
+}
+
 .score span {
   display: inline;
   font-family: 'Architects Daughter', cursive; 
-  margin-left: 200px;
+  margin-left: 255px;
 }
 
   #movement {
