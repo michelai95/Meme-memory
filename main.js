@@ -24,6 +24,7 @@ let hardReset = document.getElementById('restart');
 let points = document.getElementsByClassName('points');
 let memesBox = [];
 let score = 0; 
+let mismatch = 0;
 
 /*----Event Listener's/ DOM Manipulation-----*/
 
@@ -75,7 +76,7 @@ function flip(e) {
             clicks = 0;
         } else {
             console.log("oops");
-            score2.textContent = "Mismatches: " + score++;
+            score2.textContent = "Mismatches: " + mismatch++;
             // need to find a way to increment by 1 vs 2 ^^
 
             // var clickedCards = document.getElementsByClassName('active');
@@ -104,17 +105,17 @@ function flip(e) {
 // window.onload = startGame();
 
 // Defining the players and their current move 
-let playerOne = {
-    points: 0,
-    currentChoice: null,
-    allChoices: []
-};
+// let playerOne = {
+//     points: 0,
+//     currentChoice: null,
+//     allChoices: []
+// };
 
-let playerTwo = {
-    points: 0,
-    currentChoice: null,
-    allChoices: []
-};
+// let playerTwo = {
+//     points: 0,
+//     currentChoice: null,
+//     allChoices: []
+// };
 
 // To allow player one to choose a card 
 
@@ -135,39 +136,47 @@ function countdown() {
     let minute = Math.floor(seconds/60) 
     let remainingSeconds = seconds - minute*60
     // can also use % for the equation 
-    timer.textContent = minute + "minutes " + remainingSeconds + "seconds ";
+    timer.textContent = minute + " minutes " + remainingSeconds + " seconds ";
     // seconds++, 1000;
 }
 
 // Stretch goals
+// function shuffle(memesBox) {
+//     var i = 0,
+//         j = 0,
+//         temp = null
 
-// Players choices
-
-// function playerChoice() {
-//     turn++;
-//     points.textContent = turn;
-//     if(turn == 1) {
-//         second = 0;
-//         minute = 0;
-//         countdown();
+//     for (i = memesBox.length - 1; i > 0; i -- 1) {
+//         j = Math.floor(Math.random() * (i + 1))
+//         temp = memesBox[i]
+//         memesBox[i] = memesBox[j]
+//         memesBox[j] = temp
 //     }
-//     if (turn > 8 && turn < 16) {
-//         for(i=0; i < 3; i++) {
-//             if(i>1) {
-//                 points.textContent = "Player One's Score " + playerChoice;
-//             }
+// }
+// let currentIndex = memesBox.length, temporaryValue, randomIndex;
+// while (currentIndex !==0) {
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//     temporaryValue = memesBox[currentIndex];
+//     memesBox[currentIndex] = memesBox[randomIndex];
+//     memesBox[randomIndex] = temporaryValue;
+// function shuffle (memesBox) {
+//     let randomMemeArray = []
+//     let tracker = []
+//     while (memesBox.length < 16) {
+//      let index = Math.floor(Math.random() * array.length)
+//       if(!tracker.includes(index)) {
+//        randomMemeArray.push(memesBox[index])
+//         tracker.push(index)
 //         }
 //     }
-//     else if (turn > 17)
-//     for(i=0; i < 3; i++) {
-//             if(i>1) {
-//                 points.textContent = "Player One's Score " + playerChoice;
-//             }
-//     }
+//     return memesBox;
+//   }
+ 
 
-// }
-// playerChoice();
 
+// shuffles card with new page load 
+// document.body.onload = shuffle(memesBox);
 
 
 // function for resetting the game
@@ -186,11 +195,6 @@ function countdown() {
     score1.textContent = "Matches " + score;
     score2.textContent = "Mismatches " + score;
  }
-
-// function to print score results
-// function to print winning player
-// function to recognize which player is playing 
-// function to reset the scoreboard so that the two players can start another round
 
 
 // function for shuffling cards 
@@ -315,3 +319,28 @@ function countdown() {
     //     console.log(winning[i], "removing this")
     //     winning[i].classList.remove('matched');
     // }
+
+    // function playerChoice() {
+//     turn++;
+//     points.textContent = turn;
+//     if(turn == 1) {
+//         second = 0;
+//         minute = 0;
+//         countdown();
+//     }
+//     if (turn > 8 && turn < 16) {
+//         for(i=0; i < 3; i++) {
+//             if(i>1) {
+//                 points.textContent = "Player One's Score " + playerChoice;
+//             }
+//         }
+//     }
+//     else if (turn > 17)
+//     for(i=0; i < 3; i++) {
+//             if(i>1) {
+//                 points.textContent = "Player One's Score " + playerChoice;
+//             }
+//     }
+
+// }
+// playerChoice();

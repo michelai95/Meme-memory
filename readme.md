@@ -10,8 +10,8 @@
 - [x] have two players
 - [X] have a timer that will countdown from x amount of minutes to add pressure for the player
 - [x] one player goes at a time
-- [ ] reset the scoreboard 
-- [ ] add animations for each player 
+- [X] reset the scoreboard 
+- [X] add animations 
 
 ![](8EC397FF-48DF-4F61-9C67-08A0140CADE6_1_105_c.jpeg)
 
@@ -27,13 +27,12 @@
 ## Game-logic
 
 - [X] function to checkWin
-- [ ] function for time interval
-- [ ] function for resetting the game
+- [X] function for time interval
+- [X] function for resetting the game
 - [X] function for resetting the boxes after two are selected 
-- [ ] function to print score results
+- [X] function to print score results
 - [ ] function to print winning player
 - [ ] function to recognize which player is playing 
-- [ ] function to reset the scoreboard so that the two players can start another round
 
 ## Technology
 
@@ -61,3 +60,5 @@
 - [ ] research https://github.com/sandraisrael/Memory-Game-fend/blob/master/js/app.js
 - [ ] https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript/41633001#:~:text=The%20time%20origin%20is%20a,of%20the%20current%20document's%20lifetime.&text=var%20seconds%20%3D%200%3B%20setInterval(,a%20variable%20counting%20seconds%20elapsed.
 - [ ] https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript/
+- [ ] https://www.w3schools.com/howto/howto_css_shake_image.asp
+- [ ] https://www.w3schools.com/css/css3_buttons.asp
