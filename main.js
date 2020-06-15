@@ -61,7 +61,8 @@ function flip(e) {
         let clickedCards = document.getElementsByClassName('active');
         if (memesBox[0].children[1].src === memesBox[1].children[1].src) {
             console.log("match");
-            score1.textContent = "Matches: " + score++;
+            score++;
+            score1.textContent = "Matches: " + score;
 
 
             for (let i = 0; i < clickedCards.length; i++) {
@@ -76,7 +77,8 @@ function flip(e) {
             clicks = 0;
         } else {
             console.log("oops");
-            score2.textContent = "Mismatches: " + mismatch++;
+            mismatch++;
+            score2.textContent = "Mismatches: " + mismatch;
             // need to find a way to increment by 1 vs 2 ^^
 
             // var clickedCards = document.getElementsByClassName('active');
@@ -141,7 +143,7 @@ function countdown() {
 }
 
 // Stretch goals
-// function shuffle(memesBox) {
+// function shuffle() {
 //     var i = 0,
 //         j = 0,
 //         temp = null
@@ -160,6 +162,7 @@ function countdown() {
 //     temporaryValue = memesBox[currentIndex];
 //     memesBox[currentIndex] = memesBox[randomIndex];
 //     memesBox[randomIndex] = temporaryValue;
+
 // function shuffle (memesBox) {
 //     let randomMemeArray = []
 //     let tracker = []
@@ -192,8 +195,9 @@ function countdown() {
     interval = setInterval(countdown, 1000);
     // resetting the score
     score = 0;
+    mismatch = 0;
     score1.textContent = "Matches " + score;
-    score2.textContent = "Mismatches " + score;
+    score2.textContent = "Mismatches " + mismatch;
  }
 
 
