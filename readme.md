@@ -60,3 +60,4 @@
 - [ ] research https://medium.com/@adamichelllle/building-a-memory-matching-game-in-javascript-48e792c7b563
 - [ ] research https://github.com/sandraisrael/Memory-Game-fend/blob/master/js/app.js
 - [ ] https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript/41633001#:~:text=The%20time%20origin%20is%20a,of%20the%20current%20document's%20lifetime.&text=var%20seconds%20%3D%200%3B%20setInterval(,a%20variable%20counting%20seconds%20elapsed.
+- [ ] https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript/

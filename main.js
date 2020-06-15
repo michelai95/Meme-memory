@@ -19,15 +19,16 @@ let turn = 0;
 let grid = document.getElementById("grid");
 let score1 = document.getElementById("score1");
 let score2 = document.getElementById('score2')
-let reset = document.getElementById("button");
+let refresh = document.getElementById("button");
 let hardReset = document.getElementById('restart');
 let points = document.getElementsByClassName('points');
 let memesBox = [];
+let score = 0; 
 
 /*----Event Listener's/ DOM Manipulation-----*/
 
-reset.addEventListener("click", reset);
-hardReset.addEventListener("click", hardReset);
+refresh.addEventListener("click", reset);
+// hardReset.addEventListener("click", hardReset);
 
 
 // Running through the grid without having to individually list them all 
@@ -59,7 +60,7 @@ function flip(e) {
         let clickedCards = document.getElementsByClassName('active');
         if (memesBox[0].children[1].src === memesBox[1].children[1].src) {
             console.log("match");
-            score1.textContent = "Matches: " + turn++;
+            score1.textContent = "Matches: " + score++;
 
 
             for (let i = 0; i < clickedCards.length; i++) {
@@ -74,7 +75,7 @@ function flip(e) {
             clicks = 0;
         } else {
             console.log("oops");
-            score2.textContent = "Mismatches: " + turn++;
+            score2.textContent = "Mismatches: " + score++;
             // need to find a way to increment by 1 vs 2 ^^
 
             // var clickedCards = document.getElementsByClassName('active');
@@ -170,7 +171,21 @@ function countdown() {
 
 
 // function for resetting the game
-
+ function reset() { 
+    let winning = document.getElementsByClassName('matched');
+    console.log("click", winning)
+    while (winning[0]) {
+        winning[0].classList.remove('matched')
+      }
+    // stopping the timer 
+    clearInterval(interval);
+    seconds = 0; 
+    interval = setInterval(countdown, 1000);
+    // resetting the score
+    score = 0;
+    score1.textContent = "Matches " + score;
+    score2.textContent = "Mismatches " + score;
+ }
 
 // function to print score results
 // function to print winning player
@@ -295,3 +310,8 @@ function countdown() {
 // ['14','15']
 // ];
 // timer.textContent = countdown();
+
+  // for (let i = 0; i < winning.length; i++) {
+    //     console.log(winning[i], "removing this")
+    //     winning[i].classList.remove('matched');
+    // }
