@@ -54,7 +54,7 @@
       display: center;
   } */
 
-  .front, .back {
+  /* .front, .back { */
     /* width:100%;
     height: 100%;
     padding: 20px; 
@@ -62,7 +62,7 @@
     border-radius: 7px;
     background: transparent;
     display: flex; */
-  }
+  /* } */
   .back {
     display: none;
   } 
