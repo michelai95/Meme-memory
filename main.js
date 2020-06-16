@@ -112,7 +112,6 @@ function countdown() {
 // function for resetting the game
 function reset() {
     let winning = document.getElementsByClassName('matched');
-    console.log("click", winning)
     while (winning[0]) {
         winning[0].classList.remove('matched')
     }
