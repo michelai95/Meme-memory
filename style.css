@@ -7,17 +7,7 @@
   }
  .inner {
     padding: 50px;
-    /* height: 75px; */
-    /* width: 75px; */
-    /* display: flex;
-    align-content: center;
-    position: relative; */
 }
-
-/* .inner:active {
-  transform: scale(1);
-  transition: transform .2s;
-} */
 
 .cards {
   margin-left: 125px;
@@ -44,25 +34,6 @@
     width: 100%;
     height: auto;
   }
-  /* aside {
-      font-weight: lighter;
-      float: right;
-      /* padding: 50px;
-      margin-top: -570px;
-      margin-right: 40px; */
-      /* font-family: 'Architects Daughter', cursive;
-      display: center;
-  } */
-
-  /* .front, .back { */
-    /* width:100%;
-    height: 100%;
-    padding: 20px; 
-    position: absolute;
-    border-radius: 7px;
-    background: transparent;
-    display: flex; */
-  /* } */
   .back {
     display: none;
   } 
@@ -81,21 +52,6 @@
     opacity: 0.5;
     pointer-events: none;
   }
-/* 
-  #img1 {
-      height: 100%;
-      width: 100%;
-      background: transparent;
-      position: relative;
-  }
-
-  img {
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    position: relative;
-  } */
-
 #btns {
     display: flex;
     justify-content: center;
@@ -132,8 +88,21 @@ button {
     font-size: 20px;
 }
 
-@media screen and (max-width: 800px) {
-  .left, .main, .right {
-    width: 100%; 
-  }
+@media (max-width: 500px){
+  button {
+    background-color: #5151d4;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 12px 28px;
+    color: white;
+    font-family: 'Architects Daughter', cursive; 
+    font-size: 20px;
+}
+#grid ul li{
+  width: 15%;
+  display: inline-block;  
+}
+#grid ul li img{
+width: 100%;
+height: auto;
+}
 }

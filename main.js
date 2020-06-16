@@ -23,8 +23,9 @@ let refresh = document.getElementById("button");
 let hardReset = document.getElementById('restart');
 let points = document.getElementsByClassName('points');
 let memesBox = [];
-let score = 0; 
+let score = 0;
 let mismatch = 0;
+let printScore = document.getElementsByClassName('printScore');
 
 /*----Event Listener's/ DOM Manipulation-----*/
 
@@ -47,20 +48,16 @@ for (let i = 0; i < memes.length; i++) {
 var clicks = 0;
 
 function flip(e) {
-    console.log(e);
 
     this.classList.add('active');
 
     memesBox.push(this);
-
-    console.log(memesBox);
 
     // var clicks = memesBox.length;
     clicks++;
     if (clicks == 2) {
         let clickedCards = document.getElementsByClassName('active');
         if (memesBox[0].children[1].src === memesBox[1].children[1].src) {
-            console.log("match");
             score++;
             score1.textContent = "Matches: " + score;
 
@@ -94,36 +91,6 @@ function flip(e) {
 
 /*------Game Logic------*/
 
-// Starting game function
-
-// function startGame() {
-//     let shuffleMemes = shuffle(memesBox);
-//     for (i=0; i < shuffleMemes.length; i++);
-//     cardElements[i].appendChild(shuffleMemes[i])
-// }
-// endGame function 
-
-// Starts the game once the window is opened
-// window.onload = startGame();
-
-// Defining the players and their current move 
-// let playerOne = {
-//     points: 0,
-//     currentChoice: null,
-//     allChoices: []
-// };
-
-// let playerTwo = {
-//     points: 0,
-//     currentChoice: null,
-//     allChoices: []
-// };
-
-// To allow player one to choose a card 
-
-
-// To allow player two to choose a card 
-
 // The timer 
 let seconds = 0;
 let timer = document.querySelector("#time");
@@ -135,81 +102,30 @@ let gameOver = true;
 function countdown() {
     seconds++;
     // we want to round to nearest whole minute
-    let minute = Math.floor(seconds/60) 
-    let remainingSeconds = seconds - minute*60
+    let minute = Math.floor(seconds / 60)
+    let remainingSeconds = seconds - minute * 60
     // can also use % for the equation 
     timer.textContent = minute + " minutes " + remainingSeconds + " seconds ";
     // seconds++, 1000;
 }
 
-// Stretch goals
-// function shuffle() {
-//     var i = 0,
-//         j = 0,
-//         temp = null
-
-//     for (i = memesBox.length - 1; i > 0; i -- 1) {
-//         j = Math.floor(Math.random() * (i + 1))
-//         temp = memesBox[i]
-//         memesBox[i] = memesBox[j]
-//         memesBox[j] = temp
-//     }
-// }
-// let currentIndex = memesBox.length, temporaryValue, randomIndex;
-// while (currentIndex !==0) {
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//     temporaryValue = memesBox[currentIndex];
-//     memesBox[currentIndex] = memesBox[randomIndex];
-//     memesBox[randomIndex] = temporaryValue;
-
-// function shuffle (memesBox) {
-//     let randomMemeArray = []
-//     let tracker = []
-//     while (memesBox.length < 16) {
-//      let index = Math.floor(Math.random() * array.length)
-//       if(!tracker.includes(index)) {
-//        randomMemeArray.push(memesBox[index])
-//         tracker.push(index)
-//         }
-//     }
-//     return memesBox;
-//   }
- 
-
-
-// shuffles card with new page load 
-// document.body.onload = shuffle(memesBox);
-
-
 // function for resetting the game
- function reset() { 
+function reset() {
     let winning = document.getElementsByClassName('matched');
     console.log("click", winning)
     while (winning[0]) {
         winning[0].classList.remove('matched')
-      }
+    }
     // stopping the timer 
     clearInterval(interval);
-    seconds = 0; 
+    seconds = 0;
     interval = setInterval(countdown, 1000);
     // resetting the score
     score = 0;
     mismatch = 0;
     score1.textContent = "Matches " + score;
     score2.textContent = "Mismatches " + mismatch;
- }
-
-
-// function for shuffling cards 
-// function shuffleCards() {
-//   var cards = $board.children();
-//   while (cards.length) {
-//     $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
-//   }
-// }
-
-
+}
 
 
 
@@ -299,6 +215,16 @@ function countdown() {
 //     }
 // }
 
+
+// function for shuffling cards 
+// function shuffleCards() {
+//   var cards = $board.children();
+//   while (cards.length) {
+//     $board.append(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
+//   }
+// }
+
+
 // // Meant to change the display when selected
 // function play(selectCard) {
 //     let select = document.getElementsByClassName('inner');
@@ -348,3 +274,82 @@ function countdown() {
 
 // }
 // playerChoice();
+
+// Starting game function
+
+// function startGame() {
+//     let shuffleMemes = shuffle(memesBox);
+//     for (i=0; i < shuffleMemes.length; i++);
+//     cardElements[i].appendChild(shuffleMemes[i])
+// }
+// endGame function 
+
+// Starts the game once the window is opened
+// window.onload = startGame();
+
+// Defining the players and their current move 
+// let playerOne = {
+//     points: 0,
+//     currentChoice: null,
+//     allChoices: []
+// };
+
+// let playerTwo = {
+//     points: 0,
+//     currentChoice: null,
+//     allChoices: []
+// };
+
+// To allow player one to choose a card 
+
+
+// To allow player two to choose a card 
+
+// Stretch goals
+// function shuffle() {
+//     var i = 0,
+//         j = 0,
+//         temp = null
+
+//     for (i = memesBox.length - 1; i > 0; i -- 1) {
+//         j = Math.floor(Math.random() * (i + 1))
+//         temp = memesBox[i]
+//         memesBox[i] = memesBox[j]
+//         memesBox[j] = temp
+//     }
+// }
+// let currentIndex = memesBox.length, temporaryValue, randomIndex;
+// while (currentIndex !==0) {
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//     temporaryValue = memesBox[currentIndex];
+//     memesBox[currentIndex] = memesBox[randomIndex];
+//     memesBox[randomIndex] = temporaryValue;
+
+// function shuffle (memesBox) {
+//     let randomMemeArray = []
+//     let tracker = []
+//     while (memesBox.length < 16) {
+//      let index = Math.floor(Math.random() * array.length)
+//       if(!tracker.includes(index)) {
+//        randomMemeArray.push(memesBox[index])
+//         tracker.push(index)
+//         }
+//     }
+//     return memesBox;
+//   }
+ 
+
+
+// shuffles card with new page load 
+// document.body.onload = shuffle(memesBox);
+
+// function for ending the game 
+
+// function endGame() {
+//     if(memesBox.length == 16) {
+//         clearInterval(interval);
+//         printScore = timer.appendChild;
+//     }
+// }
+
